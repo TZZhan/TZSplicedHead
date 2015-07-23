@@ -9,9 +9,11 @@
 #import "ViewController.h"
 #import "TZSplicedHead.h"
 
-@interface ViewController ()
+@interface ViewController () <TZSplicedHeadDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *promptLbl;
+@property (weak, nonatomic) IBOutlet UIImageView *headImageView;
+@property (nonatomic, strong) TZSplicedHead *spliceHead;
 
 @end
 
@@ -40,7 +42,16 @@
                           @"http://ltzmaxwell.qiniudn.com/Fgnq9Jjv8edbomcG3VlsBunmLwBG"
                           ];
     TZSplicedHead *splicedHead = [[TZSplicedHead alloc] init];
+    self.spliceHead = splicedHead;
+    splicedHead.delegate = self;
     [splicedHead spliceHeadWithImageArr:imageArr];
+}
+
+- (void)splicedHead:(TZSplicedHead *)splicedHead headImage:(UIImage *)headImage
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.headImageView.image = headImage;
+    });
 }
 
 @end

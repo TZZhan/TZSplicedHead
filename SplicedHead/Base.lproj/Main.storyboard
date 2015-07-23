@@ -36,16 +36,26 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="FNr-Bv-yzz">
+                                <rect key="frame" x="250" y="390" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="byz-Fh-y0O"/>
+                                    <constraint firstAttribute="height" constant="100" id="uri-KP-g1E"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="TJH-9e-HvI" secondAttribute="centerX" id="2z4-Mp-Xek"/>
                             <constraint firstItem="bNN-UD-qdR" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="80" id="4JR-z9-ej3"/>
                             <constraint firstAttribute="centerY" secondItem="TJH-9e-HvI" secondAttribute="centerY" id="Q8a-xI-B1d"/>
+                            <constraint firstAttribute="centerX" secondItem="FNr-Bv-yzz" secondAttribute="centerX" id="eeO-91-8YP"/>
                             <constraint firstAttribute="centerX" secondItem="bNN-UD-qdR" secondAttribute="centerX" id="sum-E3-6D1"/>
+                            <constraint firstItem="FNr-Bv-yzz" firstAttribute="top" secondItem="TJH-9e-HvI" secondAttribute="bottom" constant="80" id="vrK-1s-pLR"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="headImageView" destination="FNr-Bv-yzz" id="HJC-t6-xhf"/>
                         <outlet property="promptLbl" destination="TJH-9e-HvI" id="cF1-mc-B3f"/>
                     </connections>
                 </viewController>
@@ -53,4 +63,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon" width="120" height="120"/>
+    </resources>
 </document>

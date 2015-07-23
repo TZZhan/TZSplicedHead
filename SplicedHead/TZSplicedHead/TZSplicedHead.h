@@ -7,8 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+@class TZSplicedHead;
+@protocol TZSplicedHeadDelegate <NSObject>
+
+- (void)splicedHead:(TZSplicedHead *)splicedHead headImage:(UIImage *)headImage;
+
+@end
 
 @interface TZSplicedHead : NSObject
+
+@property (nonatomic, assign) id<TZSplicedHeadDelegate> delegate;
 
 /**
  *  拼接头像
