@@ -1,7 +1,7 @@
 ## TZSplicedHead
  * 类似于微信拼头像的功能
  
- ![(logo)](https://raw.githubusercontent.com/TZZhan/TZSplicedHead/master/show.png)
+ ![(logo)](https://raw.githubusercontent.com/TZZhan/TZSplicedHead/master/photos/show.png)
  
 ##Contents
  
