@@ -142,7 +142,7 @@ static dispatch_queue_t downloadImage_queue() {
                     [pointArrM addObject:[NSString stringWithFormat:@"%f", y]];
                 }
             }
-            [weakSelf mergedImageOnMainImage:[UIImage imageNamed:@"chatListCellGroup"] WithImageArray:[imagesArrM copy] AndImagePointArray:[pointArrM copy]];
+            [weakSelf mergedImageOnMainImage:[UIImage imageNamed:@"headBg"] WithImageArray:[imagesArrM copy] AndImagePointArray:[pointArrM copy]];
         });
     });
 }
