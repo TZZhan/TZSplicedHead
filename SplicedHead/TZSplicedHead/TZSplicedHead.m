@@ -8,7 +8,7 @@
 
 #import "TZSplicedHead.h"
 
-#define TZHeadHW 80
+#define TZHeadHW 100
 
 @interface TZSplicedHead ()
 
@@ -129,7 +129,7 @@ static dispatch_queue_t downloadImage_queue() {
                 CGFloat width = (mainSize.width - 3 * margin) / 2;
                 CGFloat x = 0.0;
                 CGFloat y = 0.0;
-                for (NSInteger i = 0; i < 3; i++) {
+                for (NSInteger i = 0; i < 2; i++) {
                     if (i == 0) {
                         x = margin;
                         y = (mainSize.width - width) / 2;

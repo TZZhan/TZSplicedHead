@@ -11,7 +11,6 @@
 
 @interface ViewController () <TZSplicedHeadDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *promptLbl;
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
 @property (nonatomic, strong) TZSplicedHead *spliceHead;
 
