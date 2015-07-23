@@ -17,6 +17,16 @@
 
 @implementation TZSplicedHead
 
++ (instancetype)sharedManager {
+    static TZSplicedHead *_sharedManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedManager = [[TZSplicedHead alloc] init];
+    });
+    
+    return _sharedManager;
+}
+
 static dispatch_queue_t downloadImage_queue() {
     static dispatch_queue_t af_url_session_manager_processing_queue;
     static dispatch_once_t onceToken;
@@ -155,7 +165,7 @@ static dispatch_queue_t downloadImage_queue() {
     return [[UIImage alloc] initWithData:data];
 }
 
-- (BOOL)mergedImageOnMainImage:(UIImage *)mainImg WithImageArray:(NSArray *)imgArray AndImagePointArray:(NSArray *)imgPointArray
+- (void)mergedImageOnMainImage:(UIImage *)mainImg WithImageArray:(NSArray *)imgArray AndImagePointArray:(NSArray *)imgPointArray
 {
     UIGraphicsBeginImageContext(CGSizeMake(TZHeadHW, TZHeadHW));
     [mainImg drawInRect:CGRectMake(0, 0, TZHeadHW, TZHeadHW)];
@@ -182,8 +192,6 @@ static dispatch_queue_t downloadImage_queue() {
             [self.delegate splicedHead:self headImage:resultImage];
         });
     }
-    
-    return YES;
 }
 
 @end

@@ -12,7 +12,6 @@
 @interface ViewController () <TZSplicedHeadDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
-@property (nonatomic, strong) TZSplicedHead *spliceHead;
 
 @end
 
@@ -40,17 +39,14 @@
                           @"http://ltzmaxwell.qiniudn.com/Fs8c3szyH0i16F5JBRoFnhpSC8Lc",
                           @"http://ltzmaxwell.qiniudn.com/Fgnq9Jjv8edbomcG3VlsBunmLwBG"
                           ];
-    TZSplicedHead *splicedHead = [[TZSplicedHead alloc] init];
-    self.spliceHead = splicedHead;
+    TZSplicedHead *splicedHead = [TZSplicedHead sharedManager];
     splicedHead.delegate = self;
     [splicedHead spliceHeadWithImageArr:imageArr];
 }
 
 - (void)splicedHead:(TZSplicedHead *)splicedHead headImage:(UIImage *)headImage
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.headImageView.image = headImage;
-    });
+    self.headImageView.image = headImage;
 }
 
 @end

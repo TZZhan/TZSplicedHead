@@ -21,6 +21,13 @@
 @property (nonatomic, assign) id<TZSplicedHeadDelegate> delegate;
 
 /**
+ *  单例构造方法
+ *
+ *  @return TZSplicedHead实例
+ */
++ (instancetype)sharedManager;
+
+/**
  *  拼接头像
  *
  *  @param imageArr 头像url
