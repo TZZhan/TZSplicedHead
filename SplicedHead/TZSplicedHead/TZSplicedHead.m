@@ -178,11 +178,11 @@ static dispatch_queue_t downloadImage_queue() {
             width = (TZHeadHW - 3 * 2) / 2;
         }
         [img drawInRect:CGRectMake([[imgPointArray objectAtIndex:i] floatValue],
-                                   [[imgPointArray objectAtIndex:i+1] floatValue],
+                                   [[imgPointArray objectAtIndex:i + 1] floatValue],
                                    width,
                                    width)];
         
-        i+=2;
+        i += 2;
     }
     UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
